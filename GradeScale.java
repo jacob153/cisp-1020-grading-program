@@ -1,8 +1,6 @@
 /**
  * Grading Group Project
- */
-
-/**
+ * 
  * Provide the grade scale guidance
  */
 

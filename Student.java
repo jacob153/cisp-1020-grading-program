@@ -1,50 +1,74 @@
 /**
  * Grading Group Project
  * provide student name and id info
+ * 
  */
 
-/**
- * Student inherits GradeScale
- * enter individual Student first & last names
- * as well as their unique student ID 
- */
-
-public class Student extends GradeScale{
-	private String lastName;
-	private String firstName;
+public class Student {
+	private String sLastName;
+	private String sFirstName;
 	private int studentId;
 	
 	public Student() {
 		
 	}
-	
-	public Student(String lastName, String firstName, int studentId) {
-		this.lastName = lastName;
-		this.firstName = firstName;
+
+	/**
+	 * @param sLastName
+	 * @param sFirstName
+	 * @param studentId
+	 */
+	public Student(String sLastName, String sFirstName, int studentId) {
+		this.sLastName = sLastName;
+		this.sFirstName = sFirstName;
 		this.studentId = studentId;
 	}
-	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+
+	/**
+	 * @param sLastName the sLastName to set
+	 */
+	public void setsLastName(String sLastName) {
+		this.sLastName = sLastName;
 	}
-	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+	/**
+	 * @param sFirstName the sFirstName to set
+	 */
+	public void setsFirstName(String sFirstName) {
+		this.sFirstName = sFirstName;
 	}
-	
+
+	/**
+	 * @param studentId the studentId to set
+	 */
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
 	}
-	
-	public String getLastName(String lastName) {
-		return lastName;
+
+	/**
+	 * @return the sLastName
+	 */
+	public String getsLastName() {
+		return sLastName;
 	}
-	
-	public String getFirstName(String firstName) {
-		return firstName;
+
+	/**
+	 * @return the sFirstName
+	 */
+	public String getsFirstName() {
+		return sFirstName;
 	}
-	
-	public int getStudentId(int studentId) {
+
+	/**
+	 * @return the studentId
+	 */
+	public int getStudentId() {
 		return studentId;
 	}
+	
+	@Override
+	public String toString(){
+		return "Student Name: " + this.getsLastName() + ", " + this.getsFirstName();
+	}
+	
 }
