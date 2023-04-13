@@ -6,20 +6,20 @@
 public class Instructor {
 	private String iLastName;
 	private String iFirstName;
-	private int InstructorId;
-	/**
-	 * @param iLastName
-	 * @param iFirstName
-	 * @param InstructorId
-	 */
+	private int instructorId;
+
 	public Instructor() {
 		
 	}
-	
-	public Instructor(String iLastName, String iFirstName, int InstructorId) {
+		/**
+	 * @param iLastName
+	 * @param iFirstName
+	 * @param instructorId
+	 */
+	public Instructor(String iLastName, String iFirstName, int instructorId) {
 		this.iLastName = iLastName;
 		this.iFirstName = iFirstName;
-		this.InstructorId = InstructorId;
+		this.instructorId = instructorId;
 	}
 
 	/**
@@ -37,10 +37,10 @@ public class Instructor {
 	}
 
 	/**
-	 * @param InstructorId the InstructorId to set
+	 * @param instructorId the instructorId to set
 	 */
-	public void setInstructorId(int InstructorId) {
-		this.InstructorId = InstructorId;
+	public void setInstructorId(int instructorId) {
+		this.instructorId = instructorId;
 	}
 
 	/**
@@ -58,10 +58,10 @@ public class Instructor {
 	}
 
 	/**
-	 * @return the InstructorId
+	 * @return the instructorId
 	 */
 	public int getInstructorId() {
-		return InstructorId;
+		return instructorId;
 	}
 	
 	@Override
