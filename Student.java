@@ -4,7 +4,7 @@
  * provide student name and id info 
  */
 
-public class Student extends Instructor {
+public class Student {
 	private String sLastName;
 	private String sFirstName;
 	private int studentId;
