@@ -1,10 +1,10 @@
 /**
  * Grading Group Project
- * provide student name and id info
  * 
+ * provide student name and id info 
  */
 
-public class Student {
+public class Student extends Instructor {
 	private String sLastName;
 	private String sFirstName;
 	private int studentId;
