@@ -31,7 +31,7 @@ public class DropScore {
         }
         return scores;
         
-        // Quizzes & Labs are 20% grade distribution
+        
     }
         
 }
