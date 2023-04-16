@@ -48,5 +48,7 @@ public class TotScore {
 		return total;
 	}
 	
-	
+	// Quizzes & Labs are 20% each of grade distribution
+	// Project & Attendance are 10% each of grade distribution
+	// Exam 1 & 2 are 20% each of grade distribution
 }
