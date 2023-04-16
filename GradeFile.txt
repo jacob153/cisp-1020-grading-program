@@ -1,0 +1,18 @@
+Instructor:  Beth Webb
+Instructor ID: Webb4231988
+
+Quiz: 85 92 71 82
+Labs: 90 77 88 62 
+Project: 91
+Exam1: 84
+Exam2: 86
+Attendance: 25 out of 30
+
+
+Notes:
+Quizzes	20%
+Labs		20%
+Project	10%
+Exam1		20%
+Exam2		20%
+Attendance	10%
