@@ -2,7 +2,7 @@
 package Grading;
 
 import java.util.Scanner;
-
+// At the moment, using to test classes, needs more structure
 public class GradingMain {
     public static void main(String[] args) {
     	Scanner in = new Scanner(System.in);
