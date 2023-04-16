@@ -30,6 +30,8 @@ public class DropScore {
             scores.remove(pos);
         }
         return scores;
+        
+        // Quizzes & Labs are 20% grade distribution
     }
         
 }
