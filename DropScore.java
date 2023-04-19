@@ -4,7 +4,7 @@
  * Drop lowest score from Quizzes & labs
  *
  */
-package Grading;
+
 
 import java.util.ArrayList;
 
