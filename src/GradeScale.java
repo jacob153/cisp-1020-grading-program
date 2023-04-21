@@ -1,3 +1,7 @@
+/**
+* the instructor is able to choose which grading schema
+* that they want to use
+*/
 public final class GradeScale
 {
     public static String getLetterGrade(int gradingSchema, double score)
