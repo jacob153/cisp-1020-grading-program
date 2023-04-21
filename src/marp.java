@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ScoreListTester {
-    public static void main(String[] args) {
+public class marp {
+    public marp(){
+
         try (Scanner scanner = new Scanner(System.in)) {
             ArrayList<Assessment> quizzes = new ArrayList<>();
             ArrayList<Assessment> labAssignments = new ArrayList<>();
@@ -67,7 +68,8 @@ public class ScoreListTester {
 
             scanner.close();
         }
-    }
+    
+}
 
     private static void addToCategory(ScoreList scoreList, String category, Assessment assessment) {
         switch (category) {
@@ -127,4 +129,5 @@ public class ScoreListTester {
             break;
         }
     }
+    
 }

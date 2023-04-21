@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class GradingMain {
-    private static Menu Menu;
+public class Menu {
+    private static marp marp;
 
     public static void main(String[] args) {
-        Menu = new Menu();
-       /* try (Scanner in = new Scanner(System.in)) {
+        public Menu(){
             //Declarations
             int MenuOption = 0;
             boolean StopProgram = false;
@@ -60,6 +59,6 @@ public class GradingMain {
             }
                 System.out.println(ML);
             }
-        }*/
+        }
     }
 }
