@@ -1,0 +1,32 @@
+Reeves, Jay - 6194873
+Quiz grade: 84.6
+Lab grade: 88.8
+Project grade: 84.0
+Exam 1: 90.0
+Exam 2: 88.0
+Attendance: 79.0
+GPA: 86.58000000000001
+Johnson, Howard: 753918
+Quiz grade: 87.0
+Lab grade: 84.2
+Project grade: 87.0
+Exam 1: 82.0
+Exam 2: 90.0
+Attendance: 82.0
+GPA: 85.54
+Robins, Baskin: 313131
+Quiz grade: 31.0
+Lab grade: 31.0
+Project grade: 31.0
+Exam 1: 31.0
+Exam 2: 31.0
+Attendance: 31.0
+GPA: 31.000000000000007
+Sanders, Colonel: 11
+Quiz grade: 59.0
+Lab grade: 43.0
+Project grade: 91.0
+Exam 1: 11.0
+Exam 2: 91.0
+Attendance: 100.0
+GPA: 59.900000000000006
