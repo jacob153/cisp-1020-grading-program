@@ -10,9 +10,9 @@ public class Student implements Comparable<Student>
     }
 
     /*
-     * @param sLastName
-     * @param sFirstName
-     * @param studentId
+     * @param sLastName for student's last name
+     * @param sFirstName for student's first name
+     * @param studentId for student's ID number
      */
     public Student(String sLastName, String sFirstName, int studentId) 
     {
