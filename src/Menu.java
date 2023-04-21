@@ -1,10 +1,8 @@
 import java.util.Scanner;
-
 public class Menu {
     private static marp marp;
-
-    public static void main(String[] args) {
-        public Menu(){
+    public Menu(){
+        try (Scanner in = new Scanner(System.in)) {
             //Declarations
             int MenuOption = 0;
             boolean StopProgram = false;
@@ -61,4 +59,5 @@ public class Menu {
             }
         }
     }
+    
 }
