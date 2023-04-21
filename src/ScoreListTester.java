@@ -3,68 +3,69 @@ import java.util.Scanner;
 
 public class ScoreListTester {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            ArrayList<Assessment> quizzes = new ArrayList<>();
+            ArrayList<Assessment> labAssignments = new ArrayList<>();
+            ArrayList<Assessment> projects = new ArrayList<>();
+            ArrayList<Assessment> exams = new ArrayList<>();
+            ArrayList<Assessment> attendance = new ArrayList<>();
 
-        ArrayList<Assessment> quizzes = new ArrayList<>();
-        ArrayList<Assessment> labAssignments = new ArrayList<>();
-        ArrayList<Assessment> projects = new ArrayList<>();
-        ArrayList<Assessment> exams = new ArrayList<>();
-        ArrayList<Assessment> attendance = new ArrayList<>();
+            ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
 
-        ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
+            boolean continueInput = true;
 
-        boolean continueInput = true;
+            while (continueInput) {
+                System.out.println("1. Add grade");
+                System.out.println("2. Modify grade");
+                System.out.println("3. Remove grade");
+                System.out.println("4. Print final grade");
+                System.out.println("5. Exit");
 
-        while (continueInput) {
-            System.out.println("1. Add grade");
-            System.out.println("2. Modify grade");
-            System.out.println("3. Remove grade");
-            System.out.println("4. Print final grade");
-            System.out.println("5. Exit");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+                if (choice == 5) {
+                    continueInput = false;
+                    continue;
+                }
 
-            if (choice == 5) {
-                continueInput = false;
-                continue;
+                System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
+                String category = scanner.nextLine().trim();
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter grade:");
+                        double grade = scanner.nextDouble();
+                        Assessment assessment = new Assessment(grade);
+
+                        addToCategory(scoreList, category, assessment);
+                        break;
+
+                    case 2:
+                        System.out.println("Enter index:");
+                        int index = scanner.nextInt();
+                        System.out.println("Enter new grade:");
+                        double newGrade = scanner.nextDouble();
+
+                        modifyGradeInCategory(scoreList, category, index, newGrade);
+                        break;
+
+                    case 3:
+                        System.out.println("Enter index:");
+                        int removeIndex = scanner.nextInt();
+
+                        removeFromCategory(scoreList, category, removeIndex);
+                        break;
+
+                    case 4:
+                        System.out.printf("Final grade: %.2f%n", scoreList.getFinalGrade());
+                        break;
+                }
+                
             }
 
-            System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
-            String category = scanner.nextLine().trim();
-
-            switch (choice) {
-                case 1:
-                    System.out.println("Enter grade:");
-                    double grade = scanner.nextDouble();
-                    Assessment assessment = new Assessment(grade);
-
-                    addToCategory(scoreList, category, assessment);
-                    break;
-
-                case 2:
-                    System.out.println("Enter index:");
-                    int index = scanner.nextInt();
-                    System.out.println("Enter new grade:");
-                    double newGrade = scanner.nextDouble();
-
-                    modifyGradeInCategory(scoreList, category, index, newGrade);
-                    break;
-
-                case 3:
-                    System.out.println("Enter index:");
-                    int removeIndex = scanner.nextInt();
-
-                    removeFromCategory(scoreList, category, removeIndex);
-                    break;
-
-                case 4:
-                    System.out.printf("Final grade: %.2f%n", scoreList.getFinalGrade());
-                    break;
-            }
+            scanner.close();
         }
-
-        scanner.close();
     }
 
     private static void addToCategory(ScoreList scoreList, String category, Assessment assessment) {
@@ -103,10 +104,10 @@ public class ScoreListTester {
                 break;
             case "attendance":
                 scoreList.getAttendance().get(index).setScore(newGrade);
-break;
-}
-}
-private static void removeFromCategory(ScoreList scoreList, String category, int index) {
+        break;
+        }
+    }
+    private static void removeFromCategory(ScoreList scoreList, String category, int index) {
     switch (category) {
         case "quizzes":
             scoreList.getQuizzes().remove(index);
@@ -123,6 +124,6 @@ private static void removeFromCategory(ScoreList scoreList, String category, int
         case "attendance":
             scoreList.getAttendance().remove(index);
             break;
+        }
     }
-}
 }
