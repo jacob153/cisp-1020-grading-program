@@ -58,7 +58,8 @@ public class ScoreListTester {
                         break;
 
                     case 4:
-                        System.out.printf("Final grade: %.2f%n", scoreList.getFinalGrade());
+                        //System.out.printf("Final grade: %.2f%n", scoreList.getFinalGrade());
+                        System.out.printf("Final grade: " + scoreList.getFinalGrade());
                         break;
                 }
                 
