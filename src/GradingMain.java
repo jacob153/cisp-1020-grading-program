@@ -6,6 +6,7 @@ public class GradingMain {
             //Declarations
             int MenuOption = 0;
             boolean StopProgram = false;
+            String GradeType = "***";
             String ML = "========================================================================================";
 
             //Object Creation
@@ -28,7 +29,13 @@ public class GradingMain {
                 System.out.println("Viewing Individual Grades");
             }else if(MenuOption == 2){
                 //Option 2 - Entering Grades
-                System.out.println("Option 2");
+                System.out.println("Option 2 - Adding Grades");
+                System.out.println(ML);
+                System.out.println("enter quiz grade");
+                GradeType = in.nextLine();
+                
+
+
             }else if(MenuOption == 3){
                 //Option 3 - Dropping Lowest Grades
                 System.out.println("Option 3");
@@ -50,8 +57,7 @@ public class GradingMain {
                 System.out.println("That Doesn't appear to be an option please try again");
             }
                 System.out.println(ML);
-   }
+            }
         }
     }
-
 }

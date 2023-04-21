@@ -1,20 +1,15 @@
+public class Assessment {
+    private double score;
 
-public class Assessment
-{
-    public double score;
-
-    public Assessment(double score)
-    {
+    public Assessment(double score) {
         this.score = score;
     }
 
-    public double getScore() 
-    {
+    public double getScore() {
         return score;
     }
 
-    public void setScore(double newScore)
-    {
-        score = newScore;
+    public void setScore(double score) {
+        this.score = score;
     }
 }
