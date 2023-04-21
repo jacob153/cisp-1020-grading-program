@@ -7,6 +7,7 @@ public class GradingMain {
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		File file = new File("StudentProfile.txt");
+		FileWriter fw = new FileWriter(file, true); //true makes the info stay in the text file
 		PrintWriter pw = new PrintWriter(file);
 		
 		System.out.println("Please enter student's last name: ");
@@ -86,14 +87,15 @@ public class GradingMain {
 		System.out.println("Attendance: " + atten + "%");
 		System.out.println(" Final Attendance grade: " + atten + "%");
 		
-		System.out.println(  "Student: " + sLastName + ", " + sFirstName + "  " + studentId + " :  " + "Total Final Grade is: " + totalScore);
-		pw.write(sLastName + ", " + sFirstName + " - " + studentId + '\n');
+		System.out.println("Student: " + sLastName + ", " + sFirstName + "  " + studentId + ":  " + "GPA is: " + totalScore);
+		pw.write(sLastName + ", " + sFirstName + ": " + studentId + '\n');
 		pw.write("Quiz grade: " + quizGrade + '\n'
 				+ "Lab grade: " + labGrade + '\n' 
 				+ "Project grade: " + proj + '\n' 
 				+ "Exam 1: "+ exam1 + '\n' 
 				+ "Exam 2: " + exam2 + '\n' 
-				+ "Attendance: " + atten);
+				+ "Attendance: " + atten + '\n'
+				+ "GPA: " + totalScore + '\n');
 		in.close();
 		pw.close();
 	}
