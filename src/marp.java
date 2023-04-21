@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class marp {
+    private Menu Menu;
     public marp(){
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -20,14 +21,13 @@ public class marp {
                 System.out.println("2. Modify grade");
                 System.out.println("3. Remove grade");
                 System.out.println("4. Print final grade");
-                System.out.println("5. Exit");
+                System.out.println("5. Back to Main Menu");
 
                 int choice = scanner.nextInt();
                 scanner.nextLine();
 
                 if (choice == 5) {
-                    continueInput = false;
-                    continue;
+                    Menu = new Menu();
                 }
 
                 System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
