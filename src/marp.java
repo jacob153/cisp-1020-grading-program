@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Map;
 
 public class marp {
     private Menu Menu;
+    private static CLS CLS;
     public marp(){
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -11,25 +13,28 @@ public class marp {
             ArrayList<Assessment> projects = new ArrayList<>();
             ArrayList<Assessment> exams = new ArrayList<>();
             ArrayList<Assessment> attendance = new ArrayList<>();
+            ArrayList<Student> student1 = new ArrayList<>();
+            ArrayList<Student> student2 = new ArrayList<>();
 
             ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
 
             boolean continueInput = true;
 
             while (continueInput) {
+                CLS = new CLS();
                 System.out.println("1. Add grade");
                 System.out.println("2. Modify grade");
                 System.out.println("3. Remove grade");
                 System.out.println("4. Print final grade");
-                System.out.println("5. Back to Main Menu");
+                System.out.println("99. Back to Main Menu");
 
                 int choice = scanner.nextInt();
                 scanner.nextLine();
 
-                if (choice == 5) {
+                if (choice == 99) {
                     Menu = new Menu();
                 }
-
+                CLS = new CLS();
                 System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
                 String category = scanner.nextLine().trim();
 

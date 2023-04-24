@@ -1,6 +1,10 @@
 import java.util.Scanner;
 public class Menu {
     private static marp marp;
+    private static GPA GPA;
+    private static CLS CLS;
+    private static DropLowest DropLowest;
+    private static Sleep Sleep;
     public Menu(){
         try (Scanner in = new Scanner(System.in)) {
             //Declarations
@@ -13,47 +17,40 @@ public class Menu {
             
 
             //Main Menu
-            while(MenuOption < 100){
-            System.out.println("1. MARP (Modify, Add, Remove, Print Grades)");
-            System.out.println("2. View Average Grades");
-            System.out.println("3. View GPA");
-            System.out.println("4. View All");
-            System.out.println("5. Add Grades");
-            System.out.println("6. Drop Lowest Score");
+            while(MenuOption < 1100){
+            CLS = new CLS();
+            System.out.println("1. M.A.R.P (Modify, Add, Remove, Print Grades)");
+            System.out.println("2. View GPA - Comming Soon");
+            System.out.println("3. Drop Lowest Score - Comming Soon");
             System.out.println("99. Enter 99 to exit");
             System.out.println("Enter the number for the selected option above: ");
             MenuOption = in.nextInt();
                 System.out.println(ML);
             if(MenuOption == 1){
                 //Option 1 - Viewing Individual Grades
-                System.out.println("Sending to MARP");
+                System.out.println("Sending to M.A.R.P");
+                System.out.println(ML);
                 marp = new marp();
             }else if(MenuOption == 2){
-                //Option 2 - Entering Grades
-                System.out.println("Option 2 - Adding Grades");
+                //Option 2 - View GPA
+                System.out.println("Viewing GPA");
+                System.out.println("Comming Soon");
+                GPA = new GPA();
                 System.out.println(ML);
-                System.out.println("enter quiz grade");
-                GradeType = in.nextLine();
 
             }else if(MenuOption == 3){
                 //Option 3 - Dropping Lowest Grades
-                System.out.println("Option 3");
-            }else if(MenuOption == 4){
-                //Option 4 - View All Grade Formats
-                System.out.println("Option 4");
-            }else if(MenuOption == 5){
-                //Option 5 - Add Grades
-                System.out.println("Option 5 - Add Grades");
+                System.out.println("Dropping Lowest Score");
+                System.out.println("Comming Soon");
                 System.out.println(ML);
-
-            }else if(MenuOption == 6){
-                //Option 6 - Drop Lowest Score
-                System.out.println("Option 6");
+                DropLowest = new DropLowest();
             }else if(MenuOption == 99){
                 StopProgram = true;
                 break;
             }else{
+                CLS = new CLS();
                 System.out.println("That Doesn't appear to be an option please try again");
+                Sleep = new Sleep();
             }
                 System.out.println(ML);
             }
