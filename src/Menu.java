@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 public class Menu {
     private static marp marp;
@@ -5,7 +6,7 @@ public class Menu {
     private static CLS CLS;
     private static DropLowest DropLowest;
     private static Sleep Sleep;
-    public Menu(){
+    public Menu() throws IOException{
         try (Scanner in = new Scanner(System.in)) {
             //Declarations
             int MenuOption = 0;
@@ -30,6 +31,7 @@ public class Menu {
                 //Option 1 - Viewing Individual Grades
                 System.out.println("Sending to M.A.R.P");
                 System.out.println(ML);
+                CLS = new CLS();
                 marp = new marp();
             }else if(MenuOption == 2){
                 //Option 2 - View GPA

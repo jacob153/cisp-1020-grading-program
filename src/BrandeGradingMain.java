@@ -1,9 +1,10 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class GradingMain {
+public class BrandeGradingMain {
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		File file = new File("StudentProfile.txt");

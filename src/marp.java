@@ -1,12 +1,21 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Map;
 
 public class marp {
     private Menu Menu;
     private static CLS CLS;
-    public marp(){
-
+    private static Sleep Sleep;
+    private static GradeWriter GradeWriter;
+    /**
+     * @throws IOException
+     */
+    public marp() throws IOException{
+    
         try (Scanner scanner = new Scanner(System.in)) {
             ArrayList<Assessment> quizzes = new ArrayList<>();
             ArrayList<Assessment> labAssignments = new ArrayList<>();
@@ -21,7 +30,10 @@ public class marp {
             boolean continueInput = true;
 
             while (continueInput) {
-                CLS = new CLS();
+                int clear = 0;
+                //if(clear == 0){
+                //    CLS = new CLS();
+                //}
                 System.out.println("1. Add grade");
                 System.out.println("2. Modify grade");
                 System.out.println("3. Remove grade");
@@ -34,38 +46,49 @@ public class marp {
                 if (choice == 99) {
                     Menu = new Menu();
                 }
-                CLS = new CLS();
+                    CLS = new CLS();
                 System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
                 String category = scanner.nextLine().trim();
+                CLS = new CLS();
 
+                OutputStreamWriter pw;
                 switch (choice) {
                     case 1:
+                        CLS = new CLS();
                         System.out.println("Enter grade:");
-                        double grade = scanner.nextDouble();
+                        int grade = (int) scanner.nextDouble();
                         Assessment assessment = new Assessment(grade);
 
                         addToCategory(scoreList, category, assessment);
+                        CLS = new CLS();
                         break;
 
                     case 2:
+                        CLS = new CLS();
                         System.out.println("Enter index:");
                         int index = scanner.nextInt();
                         System.out.println("Enter new grade:");
                         double newGrade = scanner.nextDouble();
 
                         modifyGradeInCategory(scoreList, category, index, newGrade);
+                        CLS = new CLS();
                         break;
 
                     case 3:
+                        CLS = new CLS();
                         System.out.println("Enter index:");
                         int removeIndex = scanner.nextInt();
 
                         removeFromCategory(scoreList, category, removeIndex);
+                        CLS = new CLS();
                         break;
 
                     case 4:
                         //System.out.printf("Final grade: %.2f%n", scoreList.getFinalGrade());
-                        System.out.printf("Final grade: " + scoreList.getFinalGrade());
+                        clear = 1;
+                        CLS = new CLS();
+                        //Sleep = new Sleep();
+                        System.out.println("Final grade: " + scoreList.getFinalGrade());
                         break;
                 }
                 

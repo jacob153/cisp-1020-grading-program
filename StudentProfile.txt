@@ -1,0 +1,8 @@
+huffine, Jacob: 00333010
+Quiz grade: 80.0
+Lab grade: 80.0
+Project grade: 80.0
+Exam 1: 80.0
+Exam 2: 80.0
+Attendance: 80.0
+GPA: 80.0
