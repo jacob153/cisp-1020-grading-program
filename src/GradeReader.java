@@ -3,8 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public final class GradeReader 
-{
+public class GradeReader {
    
     public static ScoreList readGrades(File f)
     {
@@ -13,7 +12,6 @@ public final class GradeReader
         ArrayList<Assessment> projects;
         ArrayList<Assessment> exams;
         ArrayList<Assessment> attendance;
-
         try
         {
             Scanner sc = new Scanner(f);
@@ -66,6 +64,6 @@ public final class GradeReader
 
         return assessments;
     }
+    return null;
+    }
 
-
-}

@@ -14,8 +14,12 @@ public class marp {
     /**
      * @throws IOException
      */
+    /*@Override
+    public String toString() {
+    int TestInt = 5;
+    return "" + TestInt;
+    }*/
     public marp() throws IOException{
-    
         try (Scanner scanner = new Scanner(System.in)) {
             ArrayList<Assessment> quizzes = new ArrayList<>();
             ArrayList<Assessment> labAssignments = new ArrayList<>();
@@ -90,12 +94,15 @@ public class marp {
                         //Sleep = new Sleep();
                         System.out.println("Final grade: " + scoreList.getFinalGrade());
                         break;
+                    case 5:
+                        System.out.println("case 5");
                 }
                 
             }
 
             scanner.close();
         }
+        
     
 }
 
@@ -157,5 +164,5 @@ public class marp {
             break;
         }
     }
+    }
     
-}

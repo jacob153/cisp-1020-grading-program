@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
     private static marp marp;
     private static GPA GPA;
+    private static GradeReader GradeReader;
     private static CLS CLS;
     private static DropLowest DropLowest;
     private static Sleep Sleep;
@@ -23,6 +24,7 @@ public class Menu {
             System.out.println("1. M.A.R.P (Modify, Add, Remove, Print Grades)");
             System.out.println("2. View GPA - Comming Soon");
             System.out.println("3. Drop Lowest Score - Comming Soon");
+            System.out.println("4. Read from file");
             System.out.println("99. Enter 99 to exit");
             System.out.println("Enter the number for the selected option above: ");
             MenuOption = in.nextInt();
@@ -46,6 +48,8 @@ public class Menu {
                 System.out.println("Comming Soon");
                 System.out.println(ML);
                 DropLowest = new DropLowest();
+            }else if(MenuOption == 4){
+                GradeReader = new GradeReader();
             }else if(MenuOption == 99){
                 StopProgram = true;
                 break;
