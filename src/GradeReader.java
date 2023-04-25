@@ -1,28 +1,27 @@
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GradeReader {
-   
-    public static ScoreList readGrades(File f)
-    {
+
+    public static ScoreList readGrades(File f) {
         ArrayList<Assessment> quizzes;
         ArrayList<Assessment> labAssignments;
         ArrayList<Assessment> projects;
         ArrayList<Assessment> exams;
         ArrayList<Assessment> attendance;
-        try
-        {
+        try {
             Scanner sc = new Scanner(f);
             String firstName = sc.next();
             String lastName = sc.next();
             String id = sc.next();
-            
-            Student st = new Student(lastName, firstName, Integer.parseInt(id));
+
+            Student st = new Student(firstName, lastName, Integer.parseInt(id));
 
             String quizzesStr = sc.nextLine();
-            String labAssignmentsStr = sc.nextLine(); 
+            String labAssignmentsStr = sc.nextLine();
             String projectsStr = sc.nextLine();
             String examsStr = sc.nextLine();
             String attendanceStr = sc.nextLine();
@@ -34,40 +33,31 @@ public class GradeReader {
             exams = parseScoresString(examsStr);
             attendance = parseScoresString(attendanceStr);
 
-        }
-        catch (IOException e)
-        {
+            ScoreList scoreList = new ScoreList(lastName, firstName, Integer.parseInt(id), quizzes, labAssignments, projects, exams, attendance);
+            return scoreList;
+        } catch (IOException e) {
             System.out.println("IOException:\n" + e.getMessage());
             return null;
         }
 
-        ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
-        return scoreList;
     }
 
     /**
-     * @param str
+     * @param str string
      * @return
      */
-    public static ArrayList<Assessment> parseScoresString(String str)
-    {
+    public static ArrayList<Assessment> parseScoresString(String str) {
         String[] strs = str.split(" ");
         ArrayList<Assessment> assessments = new ArrayList<>();
-        try 
-        {
-            for (int i = 0; i < strs.length; i++)
-            {
+        try {
+            for (int i = 0; i < strs.length; i++) {
                 double score = Double.parseDouble(strs[i]);
                 assessments.add(new Assessment(score));
             }
-        }
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
         }
 
         return assessments;
-    } 
+    }
 }
-
-
