@@ -55,7 +55,7 @@ public class GradeReader {
         ArrayList<Assessment> assessments = new ArrayList<>();
         try 
         {
-            for (int i = 1; i < strs.length; i++)
+            for (int i = 0; i < strs.length; i++)
             {
                 double score = Double.parseDouble(strs[i]);
                 assessments.add(new Assessment(score));
@@ -67,7 +67,7 @@ public class GradeReader {
         }
 
         return assessments;
-    }
-    return null;
-    }
+    } 
+}
+
 

@@ -12,9 +12,9 @@ public class Menu {
             
 
             //Main Menu
-            new CLS();
+            //new CLS();
             while(MenuOption < 1100){
-            new CLS();
+            //new CLS();
             System.out.println("1. M.A.R.P (Modify, Add, Remove, Print Grades)");
             System.out.println("2. View GPA - Comming Soon");
             System.out.println("3. Drop Lowest Score - Comming Soon");

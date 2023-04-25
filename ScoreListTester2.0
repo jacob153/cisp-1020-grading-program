@@ -17,32 +17,32 @@ public class ScoreListTester {
 
 
 
-        System.out.println("Input Student object info. First, Last, ID");
+        //System.out.println("Input Student object info. First, Last, ID");
         student1 = new Student<scanner.next(), scanner.next(), scanner.nextInt()>;
-        System.out.println("Input 5 quiz grades.");
+        //System.out.println("Input 5 quiz grades.");
         quizzes1 = new ArrayList<>(15,56,87,44,14);
-        System.out.println("Input 5 lab Assignments grades.");
+        //System.out.println("Input 5 lab Assignments grades.");
         labAssignments1 = new ArrayList<>(5,6,7,4,4);
-        System.out.println("Input 1 project grade.");
+        //System.out.println("Input 1 project grade.");
         projects1 = new ArrayList<>(4);
-        System.out.println("Input 2 Exam.");
+        //System.out.println("Input 2 Exam.");
         exams1 = new ArrayList<>(5,4);
-        System.out.println("Input 1 attendance grade.");
+        //System.out.println("Input 1 attendance grade.");
         attendance1 = new ArrayList<>(100);
 
         ScoreList scoreList1 = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
 
-        System.out.println("Input Student object info. First, Last, ID");
+        //System.out.println("Input Student object info. First, Last, ID");
         student2 = new Student<scanner.next(), scanner.next(), scanner.nextInt()>;
-        System.out.println("Input 5 quiz grades.");
+        //System.out.println("Input 5 quiz grades.");
         quizzes2 = new ArrayList<>(15,56,87,44,14);
-        System.out.println("Input 5 lab Assignments grades.");
+        //System.out.println("Input 5 lab Assignments grades.");
         labAssignments2 = new ArrayList<>(5,6,7,4,4);
-        System.out.println("Input 1 project grade.");
+        //System.out.println("Input 1 project grade.");
         projects2 = new ArrayList<>(4);
-        System.out.println("Input 2 Exam.");
+        //System.out.println("Input 2 Exam.");
         exams2 = new ArrayList<>(5,4);
-        System.out.println("Input 1 attendance grade.");
+        //System.out.println("Input 1 attendance grade.");
         attendance2 = new ArrayList<>(100);
 
         ScoreList scoreList2 = new ScoreList(quizzes, labAssignments, projects, exams, attendance);

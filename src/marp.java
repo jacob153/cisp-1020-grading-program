@@ -117,19 +117,20 @@ public class marp {
     private static void addToCategory(ScoreList scoreList, String category, Assessment assessment) {
         switch (category) {
             case "quizzes":
-                scoreList.getQuizzes().add(assessment);
+                scoreList.getQuizzes().add(scoreList.getQuizzes().size(), assessment);
+
                 break;
             case "labAssignments":
-                scoreList.getLabAssignments().add(assessment);
+                scoreList.getLabAssignments().add(scoreList.getLabAssignments().size(), assessment);
                 break;
             case "projects":
-                scoreList.getProjects().add(assessment);
+                scoreList.getProjects().add(scoreList.getProjects().size(), assessment);
                 break;
             case "exams":
-                scoreList.getExams().add(assessment);
+                scoreList.getExams().add(scoreList.getExams().size(), assessment);
                 break;
             case "attendance":
-                scoreList.getAttendance().add(assessment);
+                scoreList.getAttendance().add(scoreList.getAttendance().size(), assessment);
                 break;
         }
     }

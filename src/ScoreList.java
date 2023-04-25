@@ -17,11 +17,6 @@ public class ScoreList
                      ArrayList<Assessment> attendance) 
     {
         setScores(quizzes, labAssignments, projects, exams, attendance);
-        Assessment.add(80, quizzes);
-    Assessment.add(80, labAssignments);
-    Assessment.add(80, projects);
-    Assessment.add(80, exams);
-    Assessment.add(80, attendance);
     }
 
     public void setScores(ArrayList<Assessment> quizzes, 
@@ -45,6 +40,11 @@ public class ScoreList
         double examsFinalGrade = (getSum(exams) * .4) / exams.size();
         double attendanceFinalGrade = (getSum(attendance) * .1) / attendance.size();
         
+        System.out.println(quizzesFinalGrade);
+        System.out.println(labFinalGrade);
+        System.out.println(projectsFinalGrade);
+        System.out.println(examsFinalGrade);
+        System.out.println(attendanceFinalGrade);
         return quizzesFinalGrade + labFinalGrade + projectsFinalGrade + examsFinalGrade + attendanceFinalGrade;
     }
 
