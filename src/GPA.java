@@ -2,13 +2,10 @@
 
 public class GPA {
 
-private ScoreList scores;
 
-public GPA(ScoreList scores) {
-    this.scores = scores;
-}
 
-public double calculateGPA() {
+
+public static double calculateGPA(ScoreList scores) {
     double finalGrade = scores.getFinalGrade();
     if (finalGrade >= 90.0) {
         return 4.0;

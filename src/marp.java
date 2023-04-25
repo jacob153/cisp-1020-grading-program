@@ -20,6 +20,7 @@ public class marp {
             ArrayList<Assessment> exams = new ArrayList<>();
             ArrayList<Assessment> attendance = new ArrayList<>();
             ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
+            ArrayList<Student> students = new ArrayList<>();
 
             boolean continueInput = true;
 
@@ -118,7 +119,6 @@ public class marp {
         switch (category) {
             case "quizzes":
                 scoreList.getQuizzes().add(scoreList.getQuizzes().size(), assessment);
-
                 break;
             case "labAssignments":
                 scoreList.getLabAssignments().add(scoreList.getLabAssignments().size(), assessment);
@@ -173,5 +173,14 @@ public class marp {
             break;
         }
     }
+    // public double GPA(){
+    //     GPA gpa = new GPA(scoreList);
+    //     double calculatedGPA = gpa.calculateGPA();
+    //     System.out.println("Calculated GPA: " + calculatedGPA);
+    //     System.out.println("Enter 99 to go back");
+    //     return calculatedGPA;
+    // }
+        
+
     }
     

@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class ScoreList
 {
-    private ArrayList<Assessment> quizzes = new ArrayList<>();
-    private ArrayList<Assessment> labAssignments = new ArrayList<>();
-    private ArrayList<Assessment> projects = new ArrayList<>();
-    private ArrayList<Assessment> exams = new ArrayList<>();
-    private ArrayList<Assessment> attendance = new ArrayList<>();
+    public ArrayList<Assessment> quizzes = new ArrayList<>();
+    public ArrayList<Assessment> labAssignments = new ArrayList<>();
+    public ArrayList<Assessment> projects = new ArrayList<>();
+    public ArrayList<Assessment> exams = new ArrayList<>();
+    public ArrayList<Assessment> attendance = new ArrayList<>();
     
 
     private ArrayList<Assessment> all = new ArrayList<>();
