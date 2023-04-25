@@ -30,7 +30,7 @@ public class Menu {
                 System.out.println("Sending to M.A.R.P");
                 System.out.println(ML);
                 new CLS();
-                new marp(ML);
+                new marp();
             }else if(MenuOption == 2){
                 //Option 2 - View GPA
                 System.out.println("Viewing scores for each category");

@@ -19,6 +19,14 @@ public class ScoreList extends Student
         exams = new ArrayList<>();
         attendance = new ArrayList<>();
     }
+    public ScoreList(String sLastName, String sFirstName, int ID){
+        super(sLastName, sFirstName, ID);
+        quizzes = new ArrayList<>();
+        labAssignments = new ArrayList<>();
+        projects = new ArrayList<>();
+        exams = new ArrayList<>();
+        attendance = new ArrayList<>();
+    }
     public ScoreList(String sLastName, String sFirstName, int studentId, ArrayList<Assessment> quizzes, 
                      ArrayList<Assessment> labAssignments, 
                      ArrayList<Assessment> projects, 
