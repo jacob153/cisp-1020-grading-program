@@ -7,11 +7,9 @@ public class ScoreList
     private ArrayList<Assessment> projects = new ArrayList<>();
     private ArrayList<Assessment> exams = new ArrayList<>();
     private ArrayList<Assessment> attendance = new ArrayList<>();
+    
 
     private ArrayList<Assessment> all = new ArrayList<>();
-
-    quizzes.add(80);
-
     public ScoreList(ArrayList<Assessment> quizzes, 
                      ArrayList<Assessment> labAssignments, 
                      ArrayList<Assessment> projects, 
@@ -19,6 +17,11 @@ public class ScoreList
                      ArrayList<Assessment> attendance) 
     {
         setScores(quizzes, labAssignments, projects, exams, attendance);
+        Assessment.add(80, quizzes);
+    Assessment.add(80, labAssignments);
+    Assessment.add(80, projects);
+    Assessment.add(80, exams);
+    Assessment.add(80, attendance);
     }
 
     public void setScores(ArrayList<Assessment> quizzes, 

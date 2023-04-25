@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class marp {
     /**
+     * @param category 
      * @throws IOException
      */
     /*@Override
@@ -11,7 +12,7 @@ public class marp {
     int TestInt = 5;
     return "" + TestInt;
     }*/
-    public marp() throws IOException{
+    public marp(String category) throws IOException{
         try (Scanner scanner = new Scanner(System.in)) {
             ArrayList<Assessment> quizzes = new ArrayList<>();
             ArrayList<Assessment> labAssignments = new ArrayList<>();
@@ -36,11 +37,32 @@ public class marp {
                 scanner.nextLine();
 
                 if (choice == 99) {
-                    new Menu();
+                    new Menu(scoreList);
                 }
                     new CLS();
-                System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
-                String category = scanner.nextLine().trim();
+    
+                System.out.println("Select a cetegory");
+                System.out.println("1. Quizzes");
+                System.out.println("2. Lab Assignments");
+                System.out.println("3. Projects");
+                System.out.println("4. Exams");
+                System.out.println("5. Attendance");
+                int CategoryNumber = scanner.nextInt();
+                if(CategoryNumber == 1){
+                    category = "quizzes";
+                }else if(CategoryNumber == 2){
+                    category = "labAssignments";
+                }else if(CategoryNumber == 3){
+                    category = "projects";
+                }else if(CategoryNumber == 4){
+                    category = "exams";
+                }else if(CategoryNumber == 5){
+                    category = "attendance";
+                }else{
+                    System.out.println("That is not a category, please try again");
+                }
+                //System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
+                //String category = scanner.nextLine().trim();
                 new CLS();
 
                 switch (choice) {
@@ -77,6 +99,7 @@ public class marp {
                     case 4:
                         new CLS();
                         //Sleep = new Sleep();
+                        new initialize();
                         System.out.println("Final grade: " + scoreList.getFinalGrade());
                         break;
                     case 5:

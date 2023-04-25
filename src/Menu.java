@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Menu {
-    public Menu() throws IOException{
+    public Menu(ScoreList scores) throws IOException{
         try (Scanner in = new Scanner(System.in)) {
             //Declarations
             int MenuOption = 0;
@@ -12,6 +12,7 @@ public class Menu {
             
 
             //Main Menu
+            new CLS();
             while(MenuOption < 1100){
             new CLS();
             System.out.println("1. M.A.R.P (Modify, Add, Remove, Print Grades)");
@@ -27,22 +28,12 @@ public class Menu {
                 System.out.println("Sending to M.A.R.P");
                 System.out.println(ML);
                 new CLS();
-                new marp();
+                new marp(ML);
             }else if(MenuOption == 2){
                 //Option 2 - View GPA
                 System.out.println("Viewing GPA");
                 System.out.println("Comming Soon");
-                    ArrayList<Assessment> quizzes = new ArrayList<>();
-                    ArrayList<Assessment> labAssignments = new ArrayList<>();
-                    ArrayList<Assessment> projects = new ArrayList<>();
-                    ArrayList<Assessment> exams = new ArrayList<>();
-                    ArrayList<Assessment> attendance = new ArrayList<>();
-                
-                    ScoreList scores = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
-                
-                    GPA gpa = new GPA(scores);
-                    double calculatedGPA = gpa.calculateGPA();
-                    System.out.println("Calculated GPA: " + calculatedGPA);
+                new ViewGpa();
 
             }else if(MenuOption == 3){
                 //Option 3 - Dropping Lowest Grades

@@ -8,11 +8,11 @@ public class initialize {
     ArrayList<Assessment> projects = new ArrayList<>();
     ArrayList<Assessment> exams = new ArrayList<>();
     ArrayList<Assessment> attendance = new ArrayList<>();
-    quizzes.add(80, null);
-    labAssignments.add(80, null);
-    projects.add(80, null);
-    exams.add(80, null);
-    attendance.add(100, null);
+    Assessment.add(80, quizzes);
+    Assessment.add(80, labAssignments);
+    Assessment.add(80, projects);
+    Assessment.add(80, exams);
+    Assessment.add(80, attendance);
 
     return;
 

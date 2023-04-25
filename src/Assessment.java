@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Assessment {
     private double score;
 
@@ -11,5 +13,8 @@ public class Assessment {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public static void add(int i, ArrayList<Assessment> quizzes) {
     }
 }
