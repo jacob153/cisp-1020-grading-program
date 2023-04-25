@@ -16,8 +16,8 @@ public class Menu {
             while(MenuOption < 1100){
             //new CLS();
             System.out.println("1. M.A.R.P (Modify, Add, Remove, Print Grades)");
-            System.out.println("2. View GPA - Comming Soon");
-            System.out.println("3. Drop Lowest Score - Comming Soon");
+            System.out.println("2. View GPA");
+            System.out.println("3. Drop Lowest Score");
             System.out.println("4. Read from file");
             System.out.println("5. View Letter Grade");
             System.out.println("6. Save and Exit");
