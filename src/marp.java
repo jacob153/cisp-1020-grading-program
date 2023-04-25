@@ -21,6 +21,8 @@ public class marp {
             ArrayList<Assessment> attendance = new ArrayList<>();
             ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
             ArrayList<Student> students = new ArrayList<>();
+            
+            //add options for creating new student by recieving Student info
 
             boolean continueInput = true;
 

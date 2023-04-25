@@ -32,7 +32,8 @@ public class Menu {
             }else if(MenuOption == 2){
                 //Option 2 - View GPA
                 System.out.println("Viewing GPA");
-                System.out.println("gpa:"+GPA.calculateGPA(scores));
+                System.out.println("gpa:"+
+                GPA.calculateGPA(scores));
 
             }else if(MenuOption == 3){
                 //Option 3 - Dropping Lowest Grades
