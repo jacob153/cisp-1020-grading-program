@@ -38,9 +38,13 @@ public class Menu {
             }else if(MenuOption == 3){
                 //Option 3 - Dropping Lowest Grades
                 System.out.println("Dropping Lowest Score");
-                System.out.println("Comming Soon");
                 System.out.println(ML);
                 new DropLowest();
+                File file = new File(" ");
+                ScoreList myScores = GradeReader.readGrades(file);
+                ArrayList<Assessment> quizScoresWithLowestDropped = DropScore.dropLowest(myScores.getQuizzes());
+                ArrayList<Assessment> labScoresWithLowestDropped = DropScore.dropLowest(myScores.getLabAssignments());
+                System.out.println("Dropped lowest score from Quizzes and Labs ");
             }else if(MenuOption == 4){
                 new GradeReader();
             }else if(MenuOption == 99){
