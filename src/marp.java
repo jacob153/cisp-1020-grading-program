@@ -21,7 +21,7 @@ public class marp {
             ArrayList<Assessment> attendance = new ArrayList<>();
             ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
             ArrayList<Student> students = new ArrayList<>();
-            
+
             //add options for creating new student by recieving Student info
 
             boolean continueInput = true;
@@ -112,10 +112,13 @@ public class marp {
             }
 
             scanner.close();
+
+     
+
         }
         
-    
-}
+
+        }
 
     private static void addToCategory(ScoreList scoreList, String category, Assessment assessment) {
         switch (category) {
@@ -175,6 +178,7 @@ public class marp {
             break;
         }
     }
+
     // public double GPA(){
     //     GPA gpa = new GPA(scoreList);
     //     double calculatedGPA = gpa.calculateGPA();
