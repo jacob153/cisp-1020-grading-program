@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public final class DropScore
 {
-    public static ArrayList<Assessment> dropLowest(ArrayList<Assessment> assesments)
+    public static ArrayList<Assessment> dropLowest(ArrayList<Assessment> assessments)
     {
-        ArrayList<Assessment> scores = assesments;
+        ArrayList<Assessment> scores = assessments;
         Assessment lowest = scores.get(0);
         int position = 0;
 
