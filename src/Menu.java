@@ -40,11 +40,6 @@ public class Menu {
                 System.out.println("Dropping Lowest Score");
                 System.out.println(ML);
                 new DropLowest();
-                File file = new File("text.txt");
-                ScoreList myScores = GradeReader.readGrades(file);
-                ArrayList<Assessment> quizScoresWithLowestDropped = DropScore.dropLowest(myScores.getQuizzes());
-                ArrayList<Assessment> labScoresWithLowestDropped = DropScore.dropLowest(myScores.getLabAssignments());
-                System.out.println("Dropped lowest score from Quizzes and Labs ");
             }else if(MenuOption == 4){
                 new GradeReader();
             }else if(MenuOption == 5){   
