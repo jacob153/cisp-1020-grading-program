@@ -14,11 +14,8 @@ public class marp {
     }*/
     public marp(String category) throws IOException{
         try (Scanner scanner = new Scanner(System.in)) {
-            
 
-
-            ScoreList scoreList = new ScoreList();
-           ArrayList<Student> students = new ArrayList<>();
+            ArrayList<ScoreList> scoreList = new ArrayList<>();
 
             //add options for creating new student by recieving Student info
 
@@ -38,18 +35,27 @@ public class marp {
                 scanner.nextLine();
 
                 if (choice == 99) {
-                    new Menu(scoreList);
+                    new Menu(null);
                 }
                     new CLS();
                 
-                Student = new Student();
-                System.out.println("Select a cetegory");
+                System.out.println("Select a student by name");
+                int i = 0;
+                for(ScoreList s: scoreList){
+                    System.out.println(i + ". " + s.getsFirstName() + " " + s.getsLastName());
+                    i++;
+                }
+                int index = scanner.nextInt();
+                
+
+
+                /*System.out.println("Select a cetegory");
                 System.out.println("1. Quizzes");
                 System.out.println("2. Lab Assignments");
                 System.out.println("3. Projects");
                 System.out.println("4. Exams");
                 System.out.println("5. Attendance");
-                int CategoryNumber = scanner.nextInt();
+                int CategoryNumber = scanner.nextInt();*/
                 if(CategoryNumber == 1){
                     category = "quizzes";
                 }else if(CategoryNumber == 2){

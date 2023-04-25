@@ -8,7 +8,7 @@ public class Student implements Comparable<Student>
     {
         sLastName = "";
         sFirstName = "";
-        studentId;
+        studentId = 0;
     }
 
     /*
