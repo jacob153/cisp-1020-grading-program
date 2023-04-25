@@ -14,13 +14,11 @@ public class marp {
     }*/
     public marp(String category) throws IOException{
         try (Scanner scanner = new Scanner(System.in)) {
-            ArrayList<Assessment> quizzes = new ArrayList<>();
-            ArrayList<Assessment> labAssignments = new ArrayList<>();
-            ArrayList<Assessment> projects = new ArrayList<>();
-            ArrayList<Assessment> exams = new ArrayList<>();
-            ArrayList<Assessment> attendance = new ArrayList<>();
-            ScoreList scoreList = new ScoreList(quizzes, labAssignments, projects, exams, attendance);
-            ArrayList<Student> students = new ArrayList<>();
+            
+
+
+            ScoreList scoreList = new ScoreList();
+           ArrayList<Student> students = new ArrayList<>();
 
             //add options for creating new student by recieving Student info
 
@@ -43,7 +41,8 @@ public class marp {
                     new Menu(scoreList);
                 }
                     new CLS();
-    
+                
+                Student = new Student();
                 System.out.println("Select a cetegory");
                 System.out.println("1. Quizzes");
                 System.out.println("2. Lab Assignments");

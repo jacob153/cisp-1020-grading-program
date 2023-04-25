@@ -6,7 +6,9 @@ public class Student implements Comparable<Student>
 
     public Student()
     {
-    
+        sLastName = "";
+        sFirstName = "";
+        studentId;
     }
 
     /*

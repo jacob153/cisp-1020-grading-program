@@ -1,21 +1,31 @@
 import java.util.ArrayList;
 
-public class ScoreList
+public class ScoreList extends Student
 {
-    public ArrayList<Assessment> quizzes = new ArrayList<>();
-    public ArrayList<Assessment> labAssignments = new ArrayList<>();
-    public ArrayList<Assessment> projects = new ArrayList<>();
-    public ArrayList<Assessment> exams = new ArrayList<>();
-    public ArrayList<Assessment> attendance = new ArrayList<>();
+    public ArrayList<Assessment> quizzes;
+    public ArrayList<Assessment> labAssignments;
+    public ArrayList<Assessment> projects;
+    public ArrayList<Assessment> exams;
+    public ArrayList<Assessment> attendance;
     
 
     private ArrayList<Assessment> all = new ArrayList<>();
-    public ScoreList(ArrayList<Assessment> quizzes, 
+
+    public ScoreList(){
+        super();
+        quizzes = new ArrayList<>();
+        labAssignments = new ArrayList<>();
+        projects = new ArrayList<>();
+        exams = new ArrayList<>();
+        attendance = new ArrayList<>();
+    }
+    public ScoreList(String sLastName, String sFirstName, int studentId, ArrayList<Assessment> quizzes, 
                      ArrayList<Assessment> labAssignments, 
                      ArrayList<Assessment> projects, 
                      ArrayList<Assessment> exams, 
                      ArrayList<Assessment> attendance) 
     {
+        super(sLastName, sFirstName, studentId);
         setScores(quizzes, labAssignments, projects, exams, attendance);
     }
 
