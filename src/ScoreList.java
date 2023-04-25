@@ -10,6 +10,8 @@ public class ScoreList
 
     private ArrayList<Assessment> all = new ArrayList<>();
 
+    quizzes.add(80);
+
     public ScoreList(ArrayList<Assessment> quizzes, 
                      ArrayList<Assessment> labAssignments, 
                      ArrayList<Assessment> projects, 

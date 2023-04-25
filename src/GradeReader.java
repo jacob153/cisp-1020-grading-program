@@ -45,6 +45,10 @@ public class GradeReader {
         return scoreList;
     }
 
+    /**
+     * @param str
+     * @return
+     */
     public static ArrayList<Assessment> parseScoresString(String str)
     {
         String[] strs = str.split(" ");

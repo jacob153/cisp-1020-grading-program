@@ -1,32 +1,25 @@
-import java.io.IOException;
-import java.util.Scanner;
+
 
 public class GPA {
-    private static CLS CLS;
-    private static Sleep Sleep;
-    public GPA() throws IOException{
-        int Exiting = 0;
-        Scanner in = new Scanner(System.in);
-        while(Exiting < 100){
-            CLS = new CLS();
-            marp m1 = new marp();
-            System.out.println("Comming Soon - Enter 99 to go back" + m1);
-            Exiting = in.nextInt();
-            if(Exiting == 99){
-                return;
-            }else{
-                CLS = new CLS();
-                System.out.println("That does not appear to be an option, Please try again.");
-                Sleep = new Sleep();
-                
-            }
-        }
 
-    }
-    
+private ScoreList scores;
+
+public GPA(ScoreList scores) {
+    this.scores = scores;
 }
-/* 
- * private static GPA GPA;
- * 
- * GPA = new GPA();
-*/
+
+public double calculateGPA() {
+    double finalGrade = scores.getFinalGrade();
+    if (finalGrade >= 90.0) {
+        return 4.0;
+    } else if (finalGrade >= 80.0) {
+        return 3.0;
+    } else if (finalGrade >= 70.0) {
+        return 2.0;
+    } else if (finalGrade >= 60.0) {
+        return 1.0;
+    } else {
+        return 0.0;
+    }
+}
+}
