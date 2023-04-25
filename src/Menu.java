@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.Scanner;
 public class Menu {
     public Menu(ScoreList scores) throws IOException{
-        try (Scanner in = new Scanner(System.in)) {
+                   try (Scanner in = new Scanner(System.in)) {
             //Declarations
             int MenuOption = 0;
             String ML = "========================================================================================";
@@ -13,7 +13,8 @@ public class Menu {
             //Main Menu
             //new CLS();
             while(MenuOption < 1100){
-            //new CLS();
+            //new CLS(); 
+
             System.out.println("1. M.A.R.P (Modify, Add, Remove, Print Grades)");
             System.out.println("2. View GPA");
             System.out.println("3. Drop Lowest Score");

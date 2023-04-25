@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class marp {
@@ -15,94 +16,113 @@ public class marp {
     public marp() throws IOException{
         try (Scanner scanner = new Scanner(System.in)) {
             ArrayList<ScoreList> scoreList = new ArrayList<>();
+            
 
             //add options for creating new student by recieving Student info
 
             boolean continueInput = true;
 
             while (continueInput) {
-                //if(clear == 0){
-                //    CLS = new CLS();
-                //}
-                int choice = 0;
-                //scanner.nextLine();
-                System.out.println("1. Add grade");
-                System.out.println("2. Modify grade");
-                System.out.println("3. Remove grade");
-                System.out.println("4. Print final grade");
-                System.out.println("5. Add Student");
-                System.out.println("99. Back to Main Menu");
-                
-                choice = scanner.nextInt();
 
-                if (choice == 99) {
-                    continueInput = false;
-                }
+                    //if(clear == 0){
+                    //    CLS = new CLS();
+                    //}
+                    int choice =0;
+                    //scanner.nextLine();
+                    System.out.println("1. Add grade");
+                    System.out.println("2. Modify grade");
+                    System.out.println("3. Remove grade");
+                    System.out.println("4. Print final grade");
+                    System.out.println("5. Add Student");
+                    System.out.println("99. Back to Main Menu");
+                    choice = scanner.nextInt();
+
+                //     while(file.hasNext()){
+                //         if(file.next().equals(treasure)){
+                //              foundTreasure = true;
+                //              break; // found treasure, if you need to use it, assign to variable beforehand
+                //         }
+                //    }
+                    if (choice == 99) {
+                        new Menu(null);
+
+
+                    }
+                        new CLS();
+                    
+                    
+                    //System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
+                    //String category = scanner.nextLine().trim();
                     new CLS();
+                    
+                    int index;
+                    String category = "";
+                    switch (choice) {
+                        case 1:
+                            new CLS();
+                            index = getStudentIndex(scoreList);
+                            category = getCategory();
+                            System.out.println("Enter grade:");
+                            double grade = (double) scanner.nextDouble();
+                            Assessment assessment = new Assessment(grade);
+                            addToCategory(scoreList.get(index), category, assessment);
+                            new CLS();
+                            break;
+
+                        case 2:
+                            new CLS();
+
+                            index = getStudentIndex(scoreList);
+
+                            category = getCategory();
+
+                            System.out.println("Enter index:");
+                            int gradeIndex = scanner.nextInt();
+                            System.out.println("Enter new grade:");
+                            double newGrade = scanner.nextDouble();
+
+                            modifyGradeInCategory(scoreList.get(index), category, gradeIndex, newGrade);
+                            new CLS();
+                            break;
+
+                        case 3:
+                            new CLS();
+                             index = getStudentIndex(scoreList);
+
+                            category = getCategory();
+                            System.out.println("Enter index of grade to remove:");
+                            int removeIndex = scanner.nextInt();
+
+                            removeFromCategory(scoreList.get(index), category, removeIndex);
+                            new CLS();
+                            break;
+
+                        case 4:
+                            new CLS();
+                            //Sleep = new Sleep();
+                            index = getStudentIndex(scoreList);
+                            System.out.println("Final grade: " + scoreList.get(index).getFinalGrade());
+                            break;
+                        case 5:
+                            //Add Student
+                            scoreList.add(NewStudent());
                 
-                
-                //System.out.println("Enter category (quizzes, labAssignments, projects, exams, attendance):");
-                //String category = scanner.nextLine().trim();
-                new CLS();
-                
-                int index;
-                String category = "";
-                switch (choice) {
-                    case 1:
-                        new CLS();
-                        index = getStudentIndex(scoreList);
-                        category = getCategory();
-                        System.out.println("Enter grade:");
-                        double grade = (double) scanner.nextDouble();
-                        Assessment assessment = new Assessment(grade);
-                        addToCategory(scoreList.get(index), category, assessment);
-                        new CLS();
-                        break;
+                            break;
+                        default: 
+                            System.out.println("Invalid Choice Try Again.");
+                    }
+                }
 
-                    case 2:
-                        new CLS();
-
-                        index = getStudentIndex(scoreList);
-
-                        category = getCategory();
-
-                        System.out.println("Enter index:");
-                        int gradeIndex = scanner.nextInt();
-                        System.out.println("Enter new grade:");
-                        double newGrade = scanner.nextDouble();
-
-                        modifyGradeInCategory(scoreList.get(index), category, gradeIndex, newGrade);
-                        new CLS();
-                        break;
-
-                    case 3:
-                        new CLS();
-                         index = getStudentIndex(scoreList);
-
-                        category = getCategory();
-                        System.out.println("Enter index of grade to remove:");
-                        int removeIndex = scanner.nextInt();
-
-                        removeFromCategory(scoreList.get(index), category, removeIndex);
-                        new CLS();
-                        break;
-
-                    case 4:
-                        new CLS();
-                        //Sleep = new Sleep();
-                        index = getStudentIndex(scoreList);
-                        System.out.println("Final grade: " + scoreList.get(index).getFinalGrade());
-                        break;
-                    case 5:
-                        //Add Student
-                        scoreList.add(NewStudent());
-                        break;
-                    default: 
-                        System.out.println("Invalid Choice Try Again.");
+                    
+                }  catch (NoSuchElementException i) {
+                    System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
+                    // continueInput = false;
+                }catch (Exception i) {
+                    System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
+                    // continueInput = false;
                 }
                 
-            }
-        }
+        
         
         
 
