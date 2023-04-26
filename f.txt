@@ -1,0 +1,18 @@
+Jacob Kouvarakis 000111
+Quizzes: 85 95 65 75 12
+Assignments: 30 40 57 84 13
+Project: 89
+Exams: 56 78
+Attendance: 100
+lll kkk 7777
+Quizzes: 100.0
+Assignments 30 
+Project: 1000.0
+Exams: 100.0
+Attendance: 100.0
+rrr ggg 2222
+Quizzes: 50.0
+Assignments: 50
+Project: 50.0
+Exams: 50.0
+Attendance: 50.0

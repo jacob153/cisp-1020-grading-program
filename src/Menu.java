@@ -78,7 +78,7 @@ public class Menu {
                 System.out.println(ML);
             }
             }else if(MenuOption == 4){
-                new GradeReader();
+                //new GradeReader();
             }else if(MenuOption == 5){   
                 //Option 5 - Getting Letter Grade
                 for(ScoreList studentScores : scores ){
