@@ -90,7 +90,9 @@ public class Menu {
             }else if(MenuOption == 6){
                 //Option 6 - Save and Exit
                 System.out.println("Saving and Exiting");
-                //GradeWriter(student1);
+                for(ScoreList student: scores){
+                    GradeWriter.printGrades(student);
+                }
             }else if(MenuOption == 99){
                 break;
             }else{

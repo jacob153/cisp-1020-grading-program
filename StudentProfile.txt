@@ -6,3 +6,15 @@ Exam 1: 80.0
 Exam 2: 80.0
 Attendance: 80.0
 GPA: 80.0
+lll kkk 7777
+Quizzes: 100.0
+Lab grade: 100.0
+Project grade: 1000.0
+Exams: 100.0
+Attendance: 100.0
+rrr ggg 2222
+Quizzes: 50.0
+Lab grade: 50.0
+Project grade: 50.0
+Exams: 50.0
+Attendance: 50.0

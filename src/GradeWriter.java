@@ -34,7 +34,7 @@ public class GradeWriter {
          * @return 
          */
     public static String arrayToString(String label, ArrayList<Assessment>listing){
-        String printMe = listing + ":";
+        String printMe = label + ":";
         for(Assessment a: listing){
             printMe = printMe + " " + String.valueOf(a.getScore());
         }
