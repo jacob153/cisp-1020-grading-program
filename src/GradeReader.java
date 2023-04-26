@@ -18,9 +18,8 @@ public class GradeReader {
             String lastName = sc.next();
             String id = sc.next();
 
-            Student st = new Student(firstName, lastName, Integer.parseInt(id));
-
             String quizzesStr = sc.nextLine();
+            // Student st = new Student(firstName, lastName, Integer.parseInt(id));
             String labAssignmentsStr = sc.nextLine();
             String projectsStr = sc.nextLine();
             String examsStr = sc.nextLine();
