@@ -64,7 +64,7 @@ public class marp {
                         case 1:
                             new CLS();
                             index = getStudentIndex(scoreList);
-                            category = getCategory();
+                            category = getCategory(scanner);
                             System.out.println("Enter grade:");
                             double grade = (double) scanner.nextDouble();
                             Assessment assessment = new Assessment(grade);
@@ -77,7 +77,7 @@ public class marp {
 
                             index = getStudentIndex(scoreList);
 
-                            category = getCategory();
+                            category = getCategory(scanner);
 
                             System.out.println("Enter index:");
                             int gradeIndex = scanner.nextInt();
@@ -92,7 +92,7 @@ public class marp {
                             new CLS();
                              index = getStudentIndex(scoreList);
 
-                            category = getCategory();
+                            category = getCategory(scanner);
                             System.out.println("Enter index of grade to remove:");
                             int removeIndex = scanner.nextInt();
 
@@ -108,15 +108,15 @@ public class marp {
                             break;
                         case 5:
                             //Add Student
-                            scanner.close();
-                            scoreList.add(NewStudent());
+                            //scanner.close();
+                            scoreList.add(NewStudent(scanner));
                 
                             break;
                         default: 
                             System.out.println("Invalid Choice Try Again.");
                     }
              
-                scanner.close();
+                
             }catch(Exception e){
                 scanner.close();
                 throw e;
@@ -128,9 +128,8 @@ public class marp {
                 //     System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
                 //     // continueInput = false;
                 // }
-                
         
-                }
+            }
         
 
     }
@@ -205,13 +204,13 @@ public class marp {
             }
             index = scanner.nextInt();
             
-            scanner.close();
+            //scanner.close();
         }catch(Exception e){
             scanner.close();
         }return index;
     }
 
-    public static String getCategory(){
+    public static String getCategory(Scanner scanner){
         System.out.println("Select a cetegory");
         System.out.println("1. Quizzes");
         System.out.println("2. Lab Assignments");
@@ -220,7 +219,7 @@ public class marp {
         System.out.println("5. Attendance");
         int CategoryNumber = 0;
         String category = "";
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
         try{
             
             CategoryNumber = scanner.nextInt();
@@ -238,7 +237,7 @@ public class marp {
             }else{
                 System.out.println("That is not a category, please try again");
             }
-            scanner.close();
+            // scanner.close();
         }catch(Exception e){
             scanner.close();
             throw e;
@@ -247,21 +246,21 @@ public class marp {
         
     }
     
-    public static ScoreList NewStudent(){
-         Scanner StudentScanner = new Scanner(System.in);
+    public static ScoreList NewStudent(Scanner StudentScanner){
+        // Scanner StudentScanner = new Scanner(System.in);
         ScoreList scorelist = null;
         try{
             System.out.println("Enter students first name:");
             //String sFirstName = System.console().readLine();
-             String sFirstName = StudentScanner.nextLine();
+             String sFirstName = StudentScanner.next();
             System.out.println("Enter students last name:");
            // String sLastName = System.console().readLine();
-             String sLastName = StudentScanner.nextLine();
+             String sLastName = StudentScanner.next();
             System.out.println("Enter students ID number");
             //int ID = 0;
              int ID = StudentScanner.nextInt(); 
             scorelist = new ScoreList(sFirstName, sLastName, ID);
-            StudentScanner.close();
+            //StudentScanner.close();
         }catch(Exception e){
             StudentScanner.close();
             throw e;
