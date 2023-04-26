@@ -1,6 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
+//import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class marp {
@@ -14,20 +14,20 @@ public class marp {
     return "" + TestInt;
     }*/
     public marp() throws IOException{
-        try (Scanner scanner = new Scanner(System.in)) {
-            ArrayList<ScoreList> scoreList = new ArrayList<>();
-            
+        
+        ArrayList<ScoreList> scoreList = new ArrayList<>();
+        
 
             //add options for creating new student by recieving Student info
 
             boolean continueInput = true;
-
             while (continueInput) {
-
+            Scanner scanner = new Scanner(System.in);
+                try{
                     //if(clear == 0){
                     //    CLS = new CLS();
                     //}
-                    int choice =0;
+                    // int choice =0;
                     //scanner.nextLine();
                     System.out.println("1. Add grade");
                     System.out.println("2. Modify grade");
@@ -35,7 +35,8 @@ public class marp {
                     System.out.println("4. Print final grade");
                     System.out.println("5. Add Student");
                     System.out.println("99. Back to Main Menu");
-                    choice = scanner.nextInt();
+                    int Ichoice = scanner.nextInt();
+                    // System.out.println("");
 
                 //     while(file.hasNext()){
                 //         if(file.next().equals(treasure)){
@@ -43,8 +44,10 @@ public class marp {
                 //              break; // found treasure, if you need to use it, assign to variable beforehand
                 //         }
                 //    }
-                    if (choice == 99) {
+                    if (Ichoice == 99) {
+                        System.out.println("pre choice 99");
                         new Menu(null);
+                        System.out.println("after choice 99");
 
 
                     }
@@ -57,7 +60,7 @@ public class marp {
                     
                     int index;
                     String category = "";
-                    switch (choice) {
+                    switch (Ichoice) {
                         case 1:
                             new CLS();
                             index = getStudentIndex(scoreList);
@@ -105,25 +108,29 @@ public class marp {
                             break;
                         case 5:
                             //Add Student
+                            scanner.close();
                             scoreList.add(NewStudent());
                 
                             break;
                         default: 
                             System.out.println("Invalid Choice Try Again.");
                     }
-                }
-
-                    
-                }  catch (NoSuchElementException i) {
-                    System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
-                    // continueInput = false;
-                }catch (Exception i) {
-                    System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
-                    // continueInput = false;
-                }
+             
+                scanner.close();
+            }catch(Exception e){
+                scanner.close();
+                throw e;
+            }
+                // }  catch (NoSuchElementException i) {
+                //     System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
+                //     // continueInput = false;
+                // }catch (Exception i) {
+                //     System.out.println("something went wrong" + i.getStackTrace() + i.getMessage());
+                //     // continueInput = false;
+                // }
                 
         
-        
+                }
         
 
     }
@@ -187,16 +194,21 @@ public class marp {
         }
     }
     public static int getStudentIndex(ArrayList<ScoreList> scoreList){
-        try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
+        int index = 0;
+        try{
             System.out.println("Select a student by name");
             int i = 0;
             for(ScoreList s: scoreList){
                 System.out.println(i + ". " + s.getsFirstName() + " " + s.getsLastName());
                 i++;
             }
-            int index = scanner.nextInt();
-            return index;
-        }
+            index = scanner.nextInt();
+            
+            scanner.close();
+        }catch(Exception e){
+            scanner.close();
+        }return index;
     }
 
     public static String getCategory(){
@@ -206,9 +218,13 @@ public class marp {
         System.out.println("3. Projects");
         System.out.println("4. Exams");
         System.out.println("5. Attendance");
-        try (Scanner scanner = new Scanner(System.in)) {
-            int CategoryNumber = scanner.nextInt();
-            String category = "";
+        int CategoryNumber = 0;
+        String category = "";
+        Scanner scanner = new Scanner(System.in);
+        try{
+            
+            CategoryNumber = scanner.nextInt();
+            
             if(CategoryNumber == 1){
                 category = "quizzes";
             }else if(CategoryNumber == 2){
@@ -222,20 +238,34 @@ public class marp {
             }else{
                 System.out.println("That is not a category, please try again");
             }
+            scanner.close();
+        }catch(Exception e){
+            scanner.close();
+            throw e;
+        }
             return category;
-        }
+        
     }
+    
     public static ScoreList NewStudent(){
-        try (Scanner scanner = new Scanner(System.in)) {
+         Scanner StudentScanner = new Scanner(System.in);
+        ScoreList scorelist = null;
+        try{
             System.out.println("Enter students first name:");
-            String sFirstName = scanner.next();
+            //String sFirstName = System.console().readLine();
+             String sFirstName = StudentScanner.nextLine();
             System.out.println("Enter students last name:");
-            String sLastName = scanner.next();
+           // String sLastName = System.console().readLine();
+             String sLastName = StudentScanner.nextLine();
             System.out.println("Enter students ID number");
-            int ID = scanner.nextInt(); 
-            ScoreList scorelist = new ScoreList(sFirstName, sLastName, ID);
-            return scorelist;
-        }
+            //int ID = 0;
+             int ID = StudentScanner.nextInt(); 
+            scorelist = new ScoreList(sFirstName, sLastName, ID);
+            StudentScanner.close();
+        }catch(Exception e){
+            StudentScanner.close();
+            throw e;
+        }return scorelist;
     }
 
     // public double GPA(){

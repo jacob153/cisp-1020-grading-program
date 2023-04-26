@@ -23,6 +23,7 @@ public class Menu {
             System.out.println("6. Save and Exit");
             System.out.println("99. Enter 99 to exit");
             System.out.println("Enter the number for the selected option above: ");
+            MenuOption = in.nextInt();
             
                 System.out.println(ML);
             if(MenuOption == 1){
