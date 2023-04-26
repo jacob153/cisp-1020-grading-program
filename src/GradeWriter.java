@@ -19,8 +19,8 @@ public class GradeWriter {
         
         bw.write(scores.getsFirstName() + " " + scores.getsLastName() + " " + scores.getStudentId() + '\n');
         bw.write(arrayToString("Quizzes", scores.getQuizzes()) + '\n'
-                + arrayToString("Lab grade", scores.getLabAssignments()) + '\n'
-                + arrayToString("Project grade", scores.getProjects()) + '\n'
+                + arrayToString("LabGrade", scores.getLabAssignments()) + '\n'
+                + arrayToString("ProjectGrade", scores.getProjects()) + '\n'
                 + arrayToString("Exams", scores.getExams()) + '\n'
                 + arrayToString("Attendance", scores.getAttendance()) + '\n');
         
