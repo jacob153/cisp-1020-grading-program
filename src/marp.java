@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 //import java.util.NoSuchElementException;
 import java.util.Scanner;
+//import java.util.Locale.Category;
 
 public class marp {
     /**
@@ -78,7 +79,8 @@ public class marp {
                             index = getStudentIndex(scoreList);
 
                             category = getCategory(scanner);
-
+                            
+                            printCategoryGrades(scoreList.get(index), category);
                             System.out.println("Enter index:");
                             int gradeIndex = scanner.nextInt();
                             System.out.println("Enter new grade:");
@@ -132,6 +134,25 @@ public class marp {
             }
         
 
+    }
+    public static void printCategoryGrades(ScoreList scorelist, String category){
+        ArrayList<Assessment> assessments = new ArrayList<>();
+        if(category.equals("quizzes")){
+            assessments = scorelist.getQuizzes();
+        }else if(category.equals("labAssesments")){
+            assessments = scorelist.getLabAssignments();
+        }else if(category.equals("exams")){
+            assessments = scorelist.getLabAssignments();
+        }else if(category.equals("projects")){
+            assessments = scorelist.getProjects();
+        }else if(category.equals("attendance")){
+            assessments = scorelist.getAttendance();
+        }
+        int i = 0;
+        for(Assessment A : assessments){
+            System.out.println(i + ". " + A.getScore());
+            i++;
+        }
     }
 
     private static void addToCategory(ScoreList scoreList, String category, Assessment assessment) {
