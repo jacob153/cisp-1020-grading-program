@@ -74,7 +74,7 @@ public class Student implements Comparable<Student>
     @Override
     public String toString()
     {
-        return "Student Name: " + this.getsLastName() + ", " + this.getsFirstName();
+        return "Student Name: " + this.getsLastName() + ", " + this.getsFirstName() + ", " + getStudentId();
     }
 
     @Override

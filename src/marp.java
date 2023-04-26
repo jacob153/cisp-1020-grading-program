@@ -13,9 +13,9 @@ public class marp {
     int TestInt = 5;
     return "" + TestInt;
     }*/
-    public marp() throws IOException{
+    public marp(ArrayList<ScoreList> scoreList) throws IOException{
         
-        ArrayList<ScoreList> scoreList = new ArrayList<>();
+        //ArrayList<ScoreList> scoreList = new ArrayList<>();
         
 
             //add options for creating new student by recieving Student info
@@ -46,7 +46,7 @@ public class marp {
                 //    }
                     if (Ichoice == 99) {
                         System.out.println("pre choice 99");
-                        new Menu(null);
+                        new Menu(scoreList);
                         System.out.println("after choice 99");
 
 
